@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pdf-heading-detector:
+    build: .
+    container_name: pdf-heading-detector
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python heading_detector.py
+    restart: "no" 
